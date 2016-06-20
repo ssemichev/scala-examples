@@ -17,15 +17,15 @@ object FindMaxBenchmark extends Bench.LocalTime {
   } yield shuffle(0 to size).toArray
 
   performance of "FindMax" in {
-    measure method "withFold" in {
+    measure method "withFoldLeft" in {
       using(ranges) in {
-        range => FindMax.withFold(range)
+        range => FindMax.withFoldLeft(range)
       }
     }
 
-    measure method "withFold with random values" in {
+    measure method "withFoldLeft with random values" in {
       using(rangesRandom) in {
-        range => FindMax.withFold(range)
+        range => FindMax.withFoldLeft(range)
       }
     }
 

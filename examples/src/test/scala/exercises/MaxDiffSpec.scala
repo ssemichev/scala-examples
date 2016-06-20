@@ -6,8 +6,8 @@ class MaxDiffSpec extends UnitTestSpec {
 
   behavior of "MaxDiff"
 
-  it should "find diff using withFold implementation" in {
-    MaxDiff.withFold(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
+  it should "find diff using withFoldLeft implementation" in {
+    MaxDiff.withFoldLeft(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
   }
 
   it should "find diff using withTailRecursion implementation" in {

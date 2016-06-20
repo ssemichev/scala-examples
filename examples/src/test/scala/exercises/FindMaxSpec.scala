@@ -6,8 +6,8 @@ class FindMaxSpec extends UnitTestSpec {
 
   behavior of "MaxDiff"
 
-  it should "find max using withFold implementation" in {
-    FindMax.withFold(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
+  it should "find max using withFoldLeft implementation" in {
+    FindMax.withFoldLeft(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
   }
 
   it should "find max using withTailRecursion implementation" in {

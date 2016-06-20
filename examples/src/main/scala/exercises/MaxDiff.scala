@@ -6,7 +6,7 @@ import scala.annotation.tailrec
 
 object MaxDiff {
 
-  def withFold(input: Array[Int]): Int = {
+  def withFoldLeft(input: Array[Int]): Int = {
     validate(input)
 
     val (min, max) = ((input.head, input.head) /: input.tail) {

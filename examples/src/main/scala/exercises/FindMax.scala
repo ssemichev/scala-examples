@@ -6,14 +6,12 @@ import scala.annotation.tailrec
 
 object FindMax {
 
-  def withFold(input: Array[Int]): Int = {
+  def withFoldLeft(input: Array[Int]): Int = {
     validate(input)
 
-    val max = (input.head /: input) {
+    (input.head /: input) {
       (acc: Int, item: Int) => acc.max(item)
     }
-
-    max
   }
 
   def withTailRecursion(input: Array[Int]): Int = {
