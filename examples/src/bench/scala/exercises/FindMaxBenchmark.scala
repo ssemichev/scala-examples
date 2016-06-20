@@ -23,15 +23,33 @@ object FindMaxBenchmark extends Bench.LocalTime {
       }
     }
 
-    measure method "withFoldLeft with random values" in {
-      using(rangesRandom) in {
-        range => FindMax.withFoldLeft(range)
-      }
-    }
-
     measure method "withTailRecursion" in {
       using(ranges) in {
         range => FindMax.withTailRecursion(range)
+      }
+    }
+
+    measure method "withStandardMax" in {
+      using(ranges) in {
+        range => FindMax.withStandardMax(range)
+      }
+    }
+
+    measure method "loop" in {
+      using(ranges) in {
+        range => FindMax.withLoop(range)
+      }
+    }
+
+    measure method "loopIf" in {
+      using(ranges) in {
+        range => FindMax.loopIf(range)
+      }
+    }
+
+    measure method "withFoldLeft with random values" in {
+      using(rangesRandom) in {
+        range => FindMax.withFoldLeft(range)
       }
     }
 
@@ -41,39 +59,21 @@ object FindMaxBenchmark extends Bench.LocalTime {
       }
     }
 
-    measure method "customOneLoop" in {
-      using(ranges) in {
-        range => FindMax.withOneLoop(range)
-      }
-    }
-
-    measure method "customOneLoop with random values" in {
-      using(rangesRandom) in {
-        range => FindMax.withOneLoop(range)
-      }
-    }
-
-    measure method "customOneLoopIf" in {
-      using(ranges) in {
-        range => FindMax.withOneLoopIf(range)
-      }
-    }
-
-    measure method "withOneLoopIf with random values" in {
-      using(rangesRandom) in {
-        range => FindMax.withOneLoopIf(range)
-      }
-    }
-
-    measure method "withStandardMinMax" in {
-      using(ranges) in {
-        range => FindMax.withStandardMax(range)
-      }
-    }
-
-    measure method "withStandardMinMax with random values" in {
+    measure method "withStandardMax with random values" in {
       using(rangesRandom) in {
         range => FindMax.withStandardMax(range)
+      }
+    }
+
+    measure method "loop with random values" in {
+      using(rangesRandom) in {
+        range => FindMax.withLoop(range)
+      }
+    }
+
+    measure method "loopIf with random values" in {
+      using(rangesRandom) in {
+        range => FindMax.loopIf(range)
       }
     }
   }

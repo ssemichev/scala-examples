@@ -27,7 +27,7 @@ object FindMax {
     findMax(input.head, 1)
   }
 
-  def withOneLoop(input: Array[Int]): Int = {
+  def withLoop(input: Array[Int]): Int = {
     validate(input)
 
     var max = input.head
@@ -39,7 +39,7 @@ object FindMax {
     max
   }
 
-  def withOneLoopIf(input: Array[Int]): Int = {
+  def loopIf(input: Array[Int]): Int = {
     validate(input)
 
     var max = input.head
