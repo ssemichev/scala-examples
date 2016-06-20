@@ -1,7 +1,5 @@
 logLevel := Level.Warn
 
-resolvers += "Sonatype OSS Releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-
 resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/"
 
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.1")
