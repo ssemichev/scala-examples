@@ -22,6 +22,6 @@ class FindMaxSpec extends UnitTestSpec {
   }
 
   it should "find max using withStandardMinMax implementation" in {
-    FindMax.withStandardMinMax(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
+    FindMax.withStandardMax(Array(0, 1, 2, 3, 4, 5)) shouldBe 5
   }
 }

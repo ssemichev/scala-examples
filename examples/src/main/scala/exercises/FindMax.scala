@@ -53,7 +53,7 @@ object FindMax {
     max
   }
 
-  def withStandardMinMax(input: Array[Int]): Int = {
+  def withStandardMax(input: Array[Int]): Int = {
     validate(input)
 
     input.max

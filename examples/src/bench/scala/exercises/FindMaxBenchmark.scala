@@ -67,13 +67,13 @@ object FindMaxBenchmark extends Bench.LocalTime {
 
     measure method "withStandardMinMax" in {
       using(ranges) in {
-        range => FindMax.withStandardMinMax(range)
+        range => FindMax.withStandardMax(range)
       }
     }
 
     measure method "withStandardMinMax with random values" in {
       using(rangesRandom) in {
-        range => FindMax.withStandardMinMax(range)
+        range => FindMax.withStandardMax(range)
       }
     }
   }
