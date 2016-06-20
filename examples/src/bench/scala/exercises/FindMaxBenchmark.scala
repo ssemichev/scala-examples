@@ -1,9 +1,10 @@
 package exercises
 
 import org.scalameter.api._
-import util.Random.shuffle
 
-object MaxDiffBenchmark extends Bench.LocalTime {
+import scala.util.Random.shuffle
+
+object FindMaxBenchmark extends Bench.LocalTime {
 
   val sizes = Gen.range("size")(300000, 1500000, 300000)
 
@@ -15,65 +16,65 @@ object MaxDiffBenchmark extends Bench.LocalTime {
     size <- sizes
   } yield shuffle(0 to size).toArray
 
-  performance of "MaxDiff" in {
+  performance of "FindMax" in {
     measure method "withFold" in {
       using(ranges) in {
-        range => MaxDiff.withFold(range)
+        range => FindMax.withFold(range)
       }
     }
 
     measure method "withFold with random values" in {
       using(rangesRandom) in {
-        range => MaxDiff.withFold(range)
+        range => FindMax.withFold(range)
       }
     }
 
     measure method "withTailRecursion" in {
       using(ranges) in {
-        range => MaxDiff.withTailRecursion(range)
+        range => FindMax.withTailRecursion(range)
       }
     }
 
     measure method "withTailRecursion with random values" in {
       using(rangesRandom) in {
-        range => MaxDiff.withTailRecursion(range)
+        range => FindMax.withTailRecursion(range)
       }
     }
 
     measure method "customOneLoop" in {
       using(ranges) in {
-        range => MaxDiff.withOneLoop(range)
+        range => FindMax.withOneLoop(range)
       }
     }
 
     measure method "customOneLoop with random values" in {
       using(rangesRandom) in {
-        range => MaxDiff.withOneLoop(range)
+        range => FindMax.withOneLoop(range)
+      }
+    }
+
+    measure method "customOneLoopIf" in {
+      using(ranges) in {
+        range => FindMax.withOneLoopIf(range)
+      }
+    }
+
+    measure method "withOneLoopIf with random values" in {
+      using(rangesRandom) in {
+        range => FindMax.withOneLoopIf(range)
       }
     }
 
     measure method "withStandardMinMax" in {
       using(ranges) in {
-        range => MaxDiff.withStandardMinMax(range)
+        range => FindMax.withStandardMinMax(range)
       }
     }
 
     measure method "withStandardMinMax with random values" in {
       using(rangesRandom) in {
-        range => MaxDiff.withStandardMinMax(range)
+        range => FindMax.withStandardMinMax(range)
       }
     }
-
-    measure method "withStandardSort" in {
-      using(ranges) in {
-        range => MaxDiff.withStandardSort(range)
-      }
-    }
-
-//    measure method "withStandardSort with random values" in {
-//      using(rangesRandom) in {
-//        range => MaxDiff.withStandardSort(range)
-//      }
-//    }
   }
 }

@@ -2,9 +2,11 @@ package exercises
 
 import common._
 
+import scala.annotation.tailrec
+
 object MaxDiff {
 
-  def customFunctional(input: Array[Int]): Int = {
+  def withFold(input: Array[Int]): Int = {
     validate(input)
 
     val (min, max) = ((input.head, input.head) /: input.tail) {
@@ -14,7 +16,20 @@ object MaxDiff {
     max - min
   }
 
-  def customOneLoop(input: Array[Int]): Int = {
+  def withTailRecursion(input: Array[Int]): Int = {
+    validate(input)
+
+    val length = input.length
+    @tailrec
+    def findDiff(min: Int, max: Int, next: Int): Int = {
+      if (next >= length) max - min
+      else findDiff(min.min(input(next)), max.max(input(next)), next + 1)
+    }
+
+    findDiff(input.head, input.head, 1)
+  }
+
+  def withOneLoop(input: Array[Int]): Int = {
     validate(input)
 
     var min = input.head
