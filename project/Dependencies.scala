@@ -21,7 +21,7 @@ object Dependencies {
   import Compile._
 
   val logging         = Seq(logback, slf4jApi, scalaLogging)
-  val test            = Seq(Test.scalaTest, Test.scalaMock, Test.scalaMeter, Test.scalaMeter)
+  val test            = Seq(Test.scalaTest, Test.scalaMock, Test.scalaMeterCore, Test.scalaMeter)
 
   lazy val shared = logging ++ test
 

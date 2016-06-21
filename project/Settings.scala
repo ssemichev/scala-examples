@@ -35,6 +35,7 @@ object Settings extends Build {
     scalacOptions ++= commonScalacOptions,
     javacOptions in Compile ++= commonJavacOptions,
     ivyLoggingLevel in ThisBuild := UpdateLogging.Quiet,
+    resolvers := Seq(sonatypeOssSnapshotsRepo, sonatypeOssRepo),
     maxErrors := 20,
     pollInterval := 1000,
     offline := true,
@@ -47,7 +48,6 @@ object Settings extends Build {
     Seq(
       parallelExecution in Test := false,
       fork in Test := true,
-      resolvers := Seq(fabricatorRepo, sonatypeOssSnapshotsRepo, sonatypeOssRepo),
       testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
     )
 
