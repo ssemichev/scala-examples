@@ -9,6 +9,6 @@ object Versions {
   val Slf4jVersion                = "1.7.13"
   val Log4jVersion                = "1.2.17"
   val ScalaLoggingVersion         = "2.1.2"
-  val ScalaMeterVersion           = "0.8-SNAPSHOT"
+  val ScalaMeterVersion           = "0.8.2"
 }
 
